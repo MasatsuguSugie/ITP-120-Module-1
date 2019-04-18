@@ -1,4 +1,4 @@
-package itp120mod1ANSWERS2018;
+package itp120mod1;
 /* Takes a meal price from the user and calculates the total with the 
 the tip and tax */
 import java.util.Scanner;
