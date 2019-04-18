@@ -1,0 +1,51 @@
+package itp120mod1ANSWERS2018;
+
+import java.text.NumberFormat;
+import java.util.Scanner;
+// Takes a number of stocks bought and calculates the profit after the sale.
+public class StockSales {
+
+	public static void main(String[] args) {
+		// Calls the scanner class
+		Scanner scan = new Scanner(System.in);
+		
+		/* gets the stock name, cost, number of shares, commission rate and the 
+		price when sold*/
+		System.out.println("What is the name of the stock?");
+		String stockName = scan.nextLine();
+		
+		System.out.println("What is the purchase cost per share?");
+		double costPerShare = scan.nextDouble();
+		
+		System.out.println("How many shares were purchased?");
+		int numShares = scan.nextInt();
+		
+		System.out.println("What is the commission rate in percentage?");
+		double commissionRate = scan.nextDouble();
+		
+		System.out.println("What was the sales cost per share?");
+		double salesCost = scan.nextDouble();
+
+		// Creates the variables which calculate the totals
+		double amountPaid = numShares * costPerShare;
+		double amountCommission = (commissionRate * amountPaid)/100;
+		double totalAmountPaid = amountPaid + amountCommission;
+		double soldValue = salesCost * numShares;
+		double soldCommission = (commissionRate * soldValue)/100;
+		double soldTotal = soldValue - soldCommission;
+		double netProfit = soldTotal - totalAmountPaid;
+		NumberFormat nf = NumberFormat.getCurrencyInstance();
+		
+		
+		//Prints the results to the user
+		System.out.println("You bought " + numShares + " shares of " + stockName);
+		System.out.println("Amount paid for " + stockName + " stocks: " + nf.format(amountPaid ));
+		System.out.println("Purchase Commission: $" + nf.format(amountCommission));
+		System.out.println("Total with commission: " + nf.format(totalAmountPaid ));
+		System.out.println("Value of stock when sold: " + nf.format(soldValue));
+		System.out.println("Sales Commission: " + nf.format(soldCommission));
+		System.out.println("     You made: " + nf.format(netProfit));
+
+	}
+
+}
