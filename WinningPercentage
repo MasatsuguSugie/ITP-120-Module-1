@@ -1,0 +1,46 @@
+package itp120mod1ANSWERS2018;
+
+
+public class Ex6WinningPercentage {
+
+	public static void main(String[] args) {
+		
+		// define the following variables.  You decide
+		// the data types (but remember my comments from our module 1 documentation).
+		//  Write your line of code after
+		// my comment and LEAVE my comments in for
+		// documentation. Do this in all of your submissions
+		
+		// a variable named teamName that represents your team name
+		String teamName;
+				
+		// a variable named numGames that represents the number of games played
+		int numGames;
+				
+		//a variable named wins that represents the number of wins for the team 
+		int wins;
+		
+		
+		// Set the value of the variables.  Let's do the calculation for the 
+		// Houston Astros in the 2017 World Series season.  They played 162
+		// games and won 101 of them.  
+		teamName = "Houston Astros";
+		numGames = 162;
+		wins = 101;
+		
+		// Now create the variable named percentWins and use it to store 
+		// the calculation of the percentage of wins
+		// See Ex5VariableDeclarations for a discussion of integer division.
+		double percentWins = (double)wins/numGames * 100;		
+				
+		// Have your program print out a statement that 
+		// summarizes the above information.  It should say
+		// "The Houston Astros won 101 games in 2017.  They played 162.  That 
+		// gave them a winning percentage of 62%.
+		// Do not worry at this point about how the decimal is formatted
+		//We will address this in the next module.
+		System.out.println("The " + teamName + " won " + wins + " games in 2017. "
+				+ "They played " + numGames + ". \nThat gave them a winning "
+				+ "percentage of " + percentWins + "%.");
+	}
+}
