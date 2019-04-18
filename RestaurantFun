@@ -1,0 +1,66 @@
+
+// Restaurant - a fun version that was submitted!!
+
+package itp120mod1ANSWERS2018;
+
+import java.text.NumberFormat;
+import java.util.*;
+
+public class RestaurantFun {
+
+	public static void main(String[] args) {
+		
+		// Declarations
+		
+		final double TAX = 6.25 / 100;		// CONSTANT
+		final double TIP = 15.00 / 100;		// CONSTANT
+		boolean answer = true;
+		
+		// Scanner
+		
+		Scanner scan = new Scanner(System.in);
+		
+		// Declarations
+		
+		NumberFormat money = NumberFormat.getCurrencyInstance();
+		
+		// Performances
+		
+		// While loop
+		while (answer == true) {										
+		
+			// Variables
+			double mealCost;
+			// Prompt 1
+			System.out.println("So ... how much was your bill?"
+					+ " (Please do not use the currency symbol)");	
+			// Input
+			mealCost = scan.nextDouble();
+			
+			// Variables
+			double mealTax = mealCost * TAX;		
+			double mealTip = (mealCost + mealTax) * TIP;			
+			double mealTotal = mealCost + mealTax + mealTip;
+			
+			// Output
+			System.out.println("\nIf your culinary experience was "
+					+ money.format(mealCost) + ":");
+			System.out.println("\tThe government thanks you for "
+					+ money.format(mealTax) + " (\"THE TAX\")!");
+			System.out.println("\t\tYour waiter thanks you for "
+					+ money.format(mealTip) + " (\"THE TIP\")!!");
+			System.out.println("\t\t\tAnd your wallet is "
+					+ money.format(mealTotal) + " lighter (\"THE TOTAL\")!!!");
+			System.out.println("\nHope it was SOOOOOOOOO good!");
+			
+			System.out.println("\nGo back for desert (answer 'true' or 'false')?");	
+			answer = scan.nextBoolean();
+	
+		}  // End of while loop
+	
+		// Output
+		System.out.println("\nGood for you! We look forward to helping you with future culinary calculations!");
+		
+	} // End of main argument
+	
+}
