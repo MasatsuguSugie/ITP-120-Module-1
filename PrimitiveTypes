@@ -1,0 +1,25 @@
+package itp120mod1ANSWERS2018;
+// calculates grocery bill
+public class PrimitiveTypes {
+
+	public static void main(String[] args) {
+		
+		//initializes all variables
+		String itemName;
+		double costEach;
+		int numberPurchased;
+		double totalPrice;
+		
+		//Assigns values to all the variables
+		itemName = "banana";
+		costEach = .25;
+		numberPurchased = 8;
+		totalPrice= numberPurchased * costEach;
+		
+		// Prints the total cost out to user
+		System.out.print("You purchased " + numberPurchased + " " + itemName + "s for " + costEach
+				+ " each for a total cost of " + totalPrice);
+		
+	}
+
+}
