@@ -1,7 +1,4 @@
-
-// Restaurant - a fun version that was submitted!!
-
-package itp120mod1ANSWERS2018;
+package itp120mod1;
 
 import java.text.NumberFormat;
 import java.util.*;
