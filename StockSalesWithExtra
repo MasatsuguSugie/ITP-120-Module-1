@@ -1,0 +1,115 @@
+package itp120mod1ANSWERS2018;
+
+import java.text.NumberFormat;
+import java.util.*;
+
+public class StockSalesWithExtras {
+
+	public static void main(String[] args) {
+
+		// Scanner
+		
+		Scanner scan = new Scanner(System.in);
+		
+		// Declarations
+		
+		NumberFormat money = NumberFormat.getCurrencyInstance();
+		NumberFormat percent = NumberFormat.getPercentInstance();
+		
+		// Performances
+		
+		// Variable
+		String stockName;
+		// Prompt 1 and input
+		System.out.println("What is the name of your stock?");
+		stockName = scan.nextLine();								
+		
+		// Variable
+		double purchaseShare;
+		// Prompt 2 and input
+		System.out.println("What was the purchase cost per " + stockName 
+				+ " share? (please do not use currency symbols)");									
+		purchaseShare = scan.nextDouble();						
+		
+		// Variable
+		int purchaseQty;
+		// Prompt 3 and input
+		System.out.println("How many shares of " + stockName 
+				+ " did you buy?");
+		purchaseQty = scan.nextInt();								
+		
+		// Variable
+		// Prompt 4 and input
+		double commRate;	
+		System.out.println("What was the commission rate? "
+				+ "(as a percentage and without the \"%\" symbol)");
+		commRate = scan.nextDouble();							
+		
+		// Variable
+		double saleShare;
+		// Prompt 5 and input
+		System.out.println("What was the sell price per " + stockName 
+				+ " share? (please do not use currency symbols)");
+		saleShare = scan.nextDouble();								
+		
+		// Variable
+		double purchaseSub = purchaseShare * purchaseQty;
+		// Output
+		System.out.println("\n" + stockName + " DIY PNL\n" 
+				+ "\n Purchase price of " + purchaseQty + " shares @ " 
+				+ money.format(purchaseShare) 
+				+ "/share: " + money.format(purchaseSub));
+		
+		// Variable
+		double commSub1 = commRate * purchaseSub / 100;
+		double commRatePrint = commRate / 100;
+		// Output
+		System.out.println(" Commission purchasing fees @ " 
+				+ percent.format(commRatePrint) + ": "
+				+ money.format(commSub1));
+		
+		// Variable
+		double purchaseTot = purchaseSub + commSub1;
+		// Output
+		System.out.println(" Total costs of purchase: " + money.format(purchaseTot));
+		
+		// Variable
+		double saleSub = saleShare * purchaseQty;
+		// Output
+		System.out.println("\n Sale price for " + purchaseQty + " shares @ "
+				+ money.format(saleShare)
+				+ "/share: " + money.format(saleSub));
+		
+		// Variable
+		double commSub2 = commRate * saleSub / 100;
+		// Output
+		System.out.println(" Commission sales fees @ " 
+				+ percent.format(commRatePrint) + ": "
+				+ money.format(commSub2));
+		
+		// Variable
+		double saleTot = saleSub - commSub2;
+		// Output
+		System.out.println(" Total cost of sale: " + money.format(saleTot));
+		
+		// Variable
+		double pNL = saleTot - purchaseTot;
+		// If loop 1
+		if (saleTot > purchaseTot) {
+			// Output
+			System.out.println("\nCongrats! You made a profit of " + money.format(pNL) + ".");
+		}
+		// If loop 2
+		if (saleTot == purchaseTot) {
+			// Output
+			System.out.println("\nOh well! You broke even at " + money.format(pNL) + ".");
+		}
+		// If loop 3
+		if (saleTot < purchaseTot) {
+			// Output
+			System.out.println("\nBummer! You suffered a loss of $"	+ money.format(pNL) + ".");
+		}
+		
+	}
+
+}
